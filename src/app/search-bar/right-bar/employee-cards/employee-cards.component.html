@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row" id="employee_cards" >
+        <ng-container *ngIf="display_card.length >0" >
+            <ng-container *ngFor="let i of display_card">
+                <div class= "col-lg-3 card" (click)="popup(i.email)">
+                    <div><img src={{i.image_url}} class="img"></div>
+                    <h6><small>{{i.first_name}}</small></h6>
+                    <p><small>{{i.job_title}}</small></p>
+                    <p><small>{{i.department}}</small></p>
+                    <i class="fa fa-solid fa-phone"></i>
+                    <i class="fa fa-solid fa-envelope"></i>
+                    <i class="fa fa-solid fa-comment"></i>
+                    <i class="fa fa-solid fa-star"></i>
+                    <i class="fa fa-solid fa-heart"></i>
+                </div>
+            </ng-container>
+        </ng-container>
+        <ng-container *ngIf="display_card.length == 0">
+            <div class="no_employee"><h2>No Match</h2></div>
+        </ng-container>
+    </div>
+</div>

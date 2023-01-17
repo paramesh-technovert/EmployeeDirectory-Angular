@@ -1,0 +1,8 @@
+<div id="left_bar">
+    <p><b>Departments</b></p>
+    <p *ngFor="let department of department_list|keyvalue" (click)="search('department',department.key)">{{department.key}}({{department.value}})</p>
+    <p><b>Offices</b></p>
+    <p *ngFor="let office of office_list|keyvalue" (click)="search('office_name',office.key)">{{office.key}}({{office.value}})</p>
+    <p><b>Job Title</b></p>
+    <p *ngFor="let jobrole of jobrole_list|keyvalue" (click)="search('job_title',jobrole.key)">{{jobrole.key}}({{jobrole.value}})</p>
+</div>

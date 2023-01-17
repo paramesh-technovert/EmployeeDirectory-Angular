@@ -1,0 +1,33 @@
+.contact{
+    margin-right:0.4%;
+    color:white;
+}
+
+.search_menu{
+    margin-top: 2%;
+}
+
+input[type=text] , #filter {
+    width:15%;
+    padding: 0.5% 2% 0.5% 2%;
+    margin: 0.5% 0;
+    color: #808080;
+  }
+
+#clear{
+    margin-left: 2%;
+    margin-right: 2%;
+    width:5%;
+    height:4.5%;
+    background-color: #69ba00;
+    border:none;
+    color:white;
+}
+
+#add_employee{
+    background-color: #3bbdeb;
+    border:none;
+    color:white;
+    float:right;
+    padding:1%;
+}

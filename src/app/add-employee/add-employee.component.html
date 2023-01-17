@@ -1,0 +1,29 @@
+<div id="popupform">
+    <div class="form-group formPopup" >
+      <form #form="ngForm" class="formContainer" id="popup" (ngSubmit)="onSubmit(form)">
+            <label><b>Add Employee</b></label>      
+            <button type="button" [mat-dialog-close]="true" id="right_buttons">&cross;</button><br><br>      
+            <label for="preffered_name"><b>Preffered Name</b></label>
+            <input class="form-control" type="text" placeholder="Enter Preffered Name" name="preferred_name" required [(ngModel)]="data.preferred_name"><br>
+            <label for="first_name"><b>First Name</b></label>
+            <input class="form-control" type="text" placeholder="Enter First Name" name="first_name" required [(ngModel)]="data.first_name"><br>
+            <label for="last_name"><b>Last Name</b></label>
+            <input class="form-control" type="text" placeholder="Enter Last Name" name="last_name" required [(ngModel)]="data.last_name"><br>
+            <label for="email"><b>Email</b></label>
+            <input class="form-control" type="text" placeholder="Enter Email" name="email" required [(ngModel)]="data.email"><br>
+            <label for="job_title"><b>Job Title</b></label>
+            <input class="form-control" type="text" placeholder="Enter Job Title" name="job_title" required [(ngModel)]="data.job_title"><br>
+            <label for="office_name"><b>Office</b></label>
+            <input class="form-control" type="text" placeholder="Enter Office Location" name="office_name" required [(ngModel)]="data.office_name"><br>
+            <label for="department"><b>Department</b></label>
+            <input class="form-control" type="text" placeholder="Enter Department" name="department" required [(ngModel)]="data.department"><br>
+            <label for="phone_number"><b>Phone Number</b></label>
+            <input class="form-control" type="text" placeholder="Enter Phone Number" name="phone_number" required [(ngModel)]="data.phone_number"><br>
+            <label for="skype_id"><b>Skype ID</b></label>
+            <input class="form-control" type="text" placeholder="Enter Skype Id" name="skype_id" required [(ngModel)]="data.skype_id"><br>
+            <label for="file"><b>Upload your Image</b></label>
+            <input class="form-control" type="file" name="image_url" (change)="previewFile($event)" required [(ngModel)]="data.image_url"><br><br>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div> 
+</div>
