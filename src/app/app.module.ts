@@ -13,7 +13,7 @@ import { RightBarComponent } from './search-bar/right-bar/right-bar.component';
 import { LeftSearchComponent } from './search-bar/right-bar/left-search/left-search.component';
 import { EmployeeCardsComponent } from './search-bar/right-bar/employee-cards/employee-cards.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { PopupCardComponent } from './search-bar/right-bar/employee-cards/popup-card/popup-card.component';
 
 
@@ -34,7 +34,7 @@ import { PopupCardComponent } from './search-bar/right-bar/employee-cards/popup-
     AppRoutingModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [EmployeeDataService],
   bootstrap: [AppComponent],

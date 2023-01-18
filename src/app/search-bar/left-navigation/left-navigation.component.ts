@@ -10,16 +10,16 @@ import {Subscription} from "rxjs"
 })
 export class LeftNavigationComponent implements OnInit {
   public employees:any;
-  public department_list:any=this._employeeService.department_list;
-  public office_list:any=this._employeeService.office_list;
-  public jobrole_list:any=this._employeeService.jobrole_list;
+  public departmentList:any=this._employeeService.departmentList;
+  public officeList:any=this._employeeService.officeList;
+  public jobroleList:any=this._employeeService.jobroleList;
   public department:Subscription;
   public office:Subscription;
   public jobrole:Subscription;
   constructor(private _employeeService:EmployeeDataService) { 
-    this.department=this._employeeService.getDepartment().subscribe((employeeData)=> this.department_list= employeeData);
-    this.office=this._employeeService.getOffice().subscribe((employeeData)=> this.office_list= employeeData);
-    this.jobrole=this._employeeService.getJobrole().subscribe((employeeData)=> this.jobrole_list= employeeData);
+    this.department=this._employeeService.getDepartment().subscribe((employeeData)=> this.departmentList= employeeData);
+    this.office=this._employeeService.getOffice().subscribe((employeeData)=> this.officeList= employeeData);
+    this.jobrole=this._employeeService.getJobrole().subscribe((employeeData)=> this.jobroleList= employeeData);
   }
 
   search(key:any,value:any){

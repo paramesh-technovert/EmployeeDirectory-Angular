@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row" id="employee_cards" >
-        <ng-container *ngIf="display_card.length >0" >
-            <ng-container *ngFor="let i of display_card">
+        <ng-container *ngIf="displayCard.length >0" >
+            <ng-container *ngFor="let i of displayCard">
                 <div class= "col-lg-3 card" (click)="popup(i.email)">
                     <div><img src={{i.image_url}} class="img"></div>
                     <h6><small>{{i.first_name}}</small></h6>
@@ -15,7 +15,7 @@
                 </div>
             </ng-container>
         </ng-container>
-        <ng-container *ngIf="display_card.length == 0">
+        <ng-container *ngIf="displayCard.length == 0">
             <div class="no_employee"><h2>No Match</h2></div>
         </ng-container>
     </div>

@@ -10,8 +10,8 @@ import { EmployeeDataService } from 'src/app/employee-data.service';
 })
 export class LeftSearchComponent implements OnInit {
   public alphabet=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-  public filtervalue: any="preferred_name";
-  public searchvalue: any="";
+  public filterValue: any="preffered_name";
+  public searchValue: any="";
   constructor(private dialogRef:MatDialog,private _employeeService:EmployeeDataService) { 
   }
 
@@ -26,11 +26,11 @@ export class LeftSearchComponent implements OnInit {
   }
 
   filter(event: any){
-    this.filtervalue=event;
-    this._employeeService.displayemployees(this.filtervalue,this.searchvalue);
+    this.filterValue=event;
+    this._employeeService.displayemployees(this.filterValue,this.searchValue);
   }
   search(event: any){
-    this.searchvalue=event.toLowerCase();
-    this._employeeService.displayemployees(this.filtervalue,this.searchvalue);
+    this.searchValue=event.toLowerCase();
+    this._employeeService.displayemployees(this.filterValue,this.searchValue);
   }
 }

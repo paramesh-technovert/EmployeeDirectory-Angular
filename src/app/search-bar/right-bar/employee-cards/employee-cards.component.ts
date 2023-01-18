@@ -10,11 +10,11 @@ import { PopupCardComponent } from './popup-card/popup-card.component';
 })
 
 export class EmployeeCardsComponent implements OnInit {
-  public display_card:any[];
+  public displayCard:any[];
   public subscription:Subscription;
   constructor(private dialogRef:MatDialog,private _employeeService:EmployeeDataService) {
-    this.display_card=this._employeeService.display_employees;
-    this.subscription= this._employeeService.getData().subscribe((employeeData)=> this.display_card= employeeData)
+    this.displayCard=this._employeeService.displayEmployees;
+    this.subscription= this._employeeService.getData().subscribe((employeeData)=> this.displayCard= employeeData)
    }
 
    popup(i: string){

@@ -5,28 +5,28 @@ import {Observable,Subject} from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeeDataService {
-  public employee_details=[{"preferred_name":"Aman","first_name":"Aman","last_name":"Khare","email":"aman.k@technovert.com","job_title":"Product Engineer","office_name":"India","department":"IT Department","phone_number":"7985673590","skype_id":"aman_55","image_url":"./assets/aman.jpg"}];;
-  public department_list:any;
-  public office_list:any;
-  public jobrole_list:any;
-  public display_employees:any;
+  public employeeDetails=[{"preffered_name":"Aman","first_name":"Aman","last_name":"Khare","email":"aman.k@technovert.com","job_title":"Product Engineer","office_name":"India","department":"IT Department","phone_number":"7985673590","skype_id":"aman_55","image_url":"./assets/aman.jpg"}];;
+  public departmentList:any;
+  public officeList:any;
+  public jobroleList:any;
+  public displayEmployees:any;
   public edit:number=0;
   constructor() {
     if(localStorage.getItem("data")==undefined){
-      localStorage.setItem("data",JSON.stringify(this.employee_details));
+      localStorage.setItem("data",JSON.stringify(this.employeeDetails));
     }
     else{
-      this.employee_details=JSON.parse(localStorage.getItem("data")!);
+      this.employeeDetails=JSON.parse(localStorage.getItem("data")!);
     }
     this.updated();
   }
   insertEmployee(data: any){
-    this.employee_details.push(data);
+    this.employeeDetails.push(data);
   }
 
   public subject=new Subject<any>();
-    sendData(display_employees: any){
-      this.subject.next(display_employees)
+    sendData(displayEmployees: any){
+      this.subject.next(displayEmployees)
     }
 
     getData():Observable<any>{
@@ -34,8 +34,8 @@ export class EmployeeDataService {
     }
 
     public department=new Subject<any>();
-    sendDepartment(department_list: any){
-      this.department.next(department_list)
+    sendDepartment(departmentList: any){
+      this.department.next(departmentList)
     }
 
     getDepartment():Observable<any>{
@@ -43,8 +43,8 @@ export class EmployeeDataService {
     }
 
     public office=new Subject<any>();
-    sendOffice(office_list: any){
-      this.office.next(office_list)
+    sendOffice(officeList: any){
+      this.office.next(officeList)
     }
 
     getOffice():Observable<any>{
@@ -52,53 +52,53 @@ export class EmployeeDataService {
     }
 
     public jobrole=new Subject<any>();
-    sendJobrole(jobrole_list: any){
-      this.jobrole.next(jobrole_list)
+    sendJobrole(jobroleList: any){
+      this.jobrole.next(jobroleList)
     }
 
     getJobrole():Observable<any>{
       return this.jobrole.asObservable()
     }
 
-  displayemployees(filtervalue:string,searchvalue:string){
-    this.display_employees=[];
-    for(let data of this.employee_details){
-      if((data[filtervalue as keyof typeof data].toLowerCase()).startsWith(searchvalue)){
-          this.display_employees.push(data);
+  displayemployees(filterValue:string,searchValue:string){
+    this.displayEmployees=[];
+    for(let data of this.employeeDetails){
+      if((data[filterValue as keyof typeof data].toLowerCase()).startsWith(searchValue)){
+          this.displayEmployees.push(data);
       }
     }
-    this.sendData(this.display_employees);
+    this.sendData(this.displayEmployees);
   }
 
   updated(){
-    this.display_employees=this.employee_details;
-    this.displayemployees("preferred_name",'');
-    localStorage.setItem("data",JSON.stringify(this.employee_details));
-    this.department_list={};
-    this.jobrole_list={};
-    this.office_list={};
-    for(let employee of this.employee_details){
-      if(this.department_list[employee["department" as keyof typeof employee] as keyof typeof this.department_list]==undefined){
-        this.department_list[employee["department" as keyof typeof employee] as keyof typeof this.department_list]=1
+    this.displayEmployees=this.employeeDetails;
+    this.displayemployees("preffered_name",'');
+    localStorage.setItem("data",JSON.stringify(this.employeeDetails));
+    this.departmentList={};
+    this.jobroleList={};
+    this.officeList={};
+    for(let employee of this.employeeDetails){
+      if(this.departmentList[employee["department" as keyof typeof employee] as keyof typeof this.departmentList]==undefined){
+        this.departmentList[employee["department" as keyof typeof employee] as keyof typeof this.departmentList]=1
       }
       else{
-        this.department_list[employee["department" as keyof typeof employee] as keyof typeof this.department_list]+=1
+        this.departmentList[employee["department" as keyof typeof employee] as keyof typeof this.departmentList]+=1
       }
-      if(this.jobrole_list[employee["job_title" as keyof typeof employee] as keyof typeof this.jobrole_list]==undefined){
-        this.jobrole_list[employee["job_title" as keyof typeof employee] as keyof typeof this.jobrole_list]=1
-      }
-      else{
-        this.jobrole_list[employee["job_title" as keyof typeof employee] as keyof typeof this.jobrole_list]+=1
-      }
-      if(this.office_list[employee["office_name" as keyof typeof employee] as keyof typeof this.office_list]==undefined){
-        this.office_list[employee["office_name" as keyof typeof employee] as keyof typeof this.office_list]=1
+      if(this.jobroleList[employee["job_title" as keyof typeof employee] as keyof typeof this.jobroleList]==undefined){
+        this.jobroleList[employee["job_title" as keyof typeof employee] as keyof typeof this.jobroleList]=1
       }
       else{
-        this.office_list[employee["office_name" as keyof typeof employee] as keyof typeof this.office_list]+=1
+        this.jobroleList[employee["job_title" as keyof typeof employee] as keyof typeof this.jobroleList]+=1
+      }
+      if(this.officeList[employee["office_name" as keyof typeof employee] as keyof typeof this.officeList]==undefined){
+        this.officeList[employee["office_name" as keyof typeof employee] as keyof typeof this.officeList]=1
+      }
+      else{
+        this.officeList[employee["office_name" as keyof typeof employee] as keyof typeof this.officeList]+=1
       }
     }
-    this.sendDepartment(this.department_list);
-    this.sendOffice(this.office_list);
-    this.sendJobrole(this.jobrole_list);
+    this.sendDepartment(this.departmentList);
+    this.sendOffice(this.officeList);
+    this.sendJobrole(this.jobroleList);
   }
 }

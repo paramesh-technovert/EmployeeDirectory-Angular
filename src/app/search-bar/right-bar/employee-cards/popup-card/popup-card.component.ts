@@ -10,14 +10,14 @@ import { AddEmployeeComponent } from 'src/app/add-employee/add-employee.componen
   styleUrls: ['./popup-card.component.css']
 })
 export class PopupCardComponent implements OnInit {
-  public display_card:any[];
+  public displayCard:any[];
   public subscription:Subscription;
   public email:string;
   public data:any;
   public edit_data:any;
   constructor(private dialogRef:MatDialog,private _employeeService:EmployeeDataService,@Inject(MAT_DIALOG_DATA) public data_email: string) {
-    this.display_card=this._employeeService.display_employees;
-    this.subscription= this._employeeService.getData().subscribe((employeeData)=> this.display_card= employeeData)
+    this.displayCard=this._employeeService.displayEmployees;
+    this.subscription= this._employeeService.getData().subscribe((employeeData)=> this.displayCard= employeeData)
     this.email=data_email;
    }
 
@@ -33,7 +33,7 @@ export class PopupCardComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.data=this.display_card.find(obj => {return obj.email == this.email});
+    this.data=this.displayCard.find(obj => {return obj.email == this.email});
   }
 
 }
