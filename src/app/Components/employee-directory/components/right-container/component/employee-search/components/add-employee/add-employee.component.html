@@ -1,0 +1,156 @@
+<div id="popupform">
+  <div class="form-group formPopup">
+    <form
+      [formGroup]="form"
+      class="formContainer"
+      id="popup"
+      (ngSubmit)="onSubmit()"
+    >
+      <label><b>Add Employee</b></label>
+      <button type="button" [mat-dialog-close]="true" id="rightButtons">
+        &cross;</button
+      ><br /><br />
+      <label for="prefferedName"><b>Preffered Name</b></label>
+      <input
+        type="text"
+        placeholder="Enter Preffered Name"
+        formControlName="prefferedName"
+      /><br />
+      <small
+        class="text-danger"
+        *ngIf="form.get('prefferedName')?.errors?.['required'] && (form.get('prefferedName').touched || submitted)"
+        >Required</small
+      ><br />
+      <small
+        class="text-danger"
+        *ngIf="form.get('prefferedName')?.errors?.['pattern']"
+        >Enter only alphabets</small
+      ><br />
+      <label for="firstName"><b>First Name</b></label>
+      <input
+        type="text"
+        placeholder="Enter First Name"
+        formControlName="firstName"
+      /><br />
+      <small
+        class="text-danger"
+        *ngIf="form.get('firstName')?.errors?.['required'] && (form.get('firstName').touched || submitted)"
+        >Required</small
+      ><br />
+      <small
+        class="text-danger"
+        *ngIf="form.get('firstName')?.errors?.['pattern']"
+        >Enter only alphabets</small
+      ><br />
+      <label for="lastName"><b>Last Name</b></label>
+      <input
+        type="text"
+        placeholder="Enter Last Name"
+        formControlName="lastName"
+      /><br />
+      <small
+        class="text-danger"
+        *ngIf="form.get('lastName')?.errors?.['required'] && (form.get('lastName').touched || submitted)"
+        >Required</small
+      ><br />
+      <small
+        class="text-danger"
+        *ngIf="form.get('lastName')?.errors?.['pattern']"
+        >Enter only alphabets</small
+      ><br />
+      <label for="email"><b>Email</b></label>
+      <input
+        type="text"
+        placeholder="Enter Email"
+        formControlName="email"
+      /><br />
+      <small
+        class="text-danger"
+        *ngIf="form.get('email')?.errors?.['required'] && (form.get('email').touched || submitted)"
+        >Required</small
+      ><br />
+      <small class="text-danger" *ngIf="form.get('email')?.errors?.['pattern']"
+        >Enter valid email</small
+      ><br />
+      <label for="jobTitle"><b>Job Title</b></label>
+      <select formControlName="jobTitle">
+        <option value="Lead Engineer">Lead Engineer</option>
+        <Option value="SharePoint Practice Head"
+          >SharePoint Practice Head</Option
+        >
+        <option value="Operations Manager">Operations Manager</option>
+        <option value="Product Manager">Product Manager</option>
+        <option value="Lead Engineer-Dot Net">Lead Engineer-Dot Net</option>
+        <option value="Network Engineer">Network Engineer</option>
+        <option value="Talent Manager">Talent Manager</option>
+        <option value="Software Engineer">Software Engineer</option>
+        <option value="UI Designer">UI Designer</option></select
+      ><br />
+      <small
+        class="text-danger"
+        *ngIf="form.get('jobTitle')?.errors?.['required'] && (form.get('jobTitle').touched || submitted)"
+        >Required</small
+      ><br />
+      <label for="officeName"><b>Office</b></label>
+      <select formControlName="officeName">
+        <option value="India">India</option>
+        <option value="Seattle">Seattle</option></select
+      ><br />
+      <small
+        class="text-danger"
+        *ngIf="form.get('officeName')?.errors?.['required'] && (form.get('officeName').touched || submitted)"
+        >Required</small
+      ><br />
+      <label for="department"><b>Department</b></label>
+      <select formControlName="department">
+        <option value="IT Department">IT Department</option>
+        <option value="HR Department">HR Department</option>
+        <option value="UX Department">UX Department</option>
+      </select>
+      <br />
+      <small
+        class="text-danger"
+        *ngIf="form.get('department')?.errors?.['required'] && (form.get('department').touched || submitted)"
+        >Required</small
+      ><br />
+      <label for="phoneNumber"><b>Phone Number</b></label>
+      <input
+        type="text"
+        placeholder="Enter Phone Number"
+        formControlName="phoneNumber"
+      /><br />
+      <small
+        class="text-danger"
+        *ngIf="form.get('phoneNumber')?.errors?.['required'] && (form.get('phoneNumber').touched || submitted)"
+        >Required</small
+      ><br />
+      <small
+        class="text-danger"
+        *ngIf="form.get('phoneNumber')?.errors?.['pattern']"
+        >Enter numeric phone number of length 10</small
+      ><br />
+      <label for="skypeId"><b>Skype ID</b></label>
+      <input
+        type="text"
+        placeholder="Enter Skype Id"
+        formControlName="skypeId"
+      /><br />
+      <small
+        class="text-danger"
+        *ngIf="form.get('skypeId')?.errors?.['required'] && (form.get('skypeId').touched || submitted)"
+        >Required</small
+      ><br />
+      <label for="file"><b>Upload New Image</b></label>
+      <input type="file" (change)="previewFile($event)" /><br /><br />
+      <div class="image">
+        <img src="{{ this.imageUrl }}" /><button
+          class="remove"
+          (click)="remove()"
+        >
+          Remove Image
+        </button>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+</div>

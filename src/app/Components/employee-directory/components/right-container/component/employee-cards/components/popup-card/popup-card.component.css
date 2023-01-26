@@ -1,0 +1,31 @@
+#popupCard{
+    background-color: #e9e9e8;
+    position:fixed;
+    top:20%;
+    left:30%;
+    padding-top: 0.5%;
+    padding-bottom: 1.5%;
+    width:50%;
+}
+
+.popupImage{
+    float:left;
+}
+
+.popupText{
+    float:right;
+}
+
+.popupText p{
+    margin: 0%;
+    padding: 0%;
+}
+
+.popupText h6{
+    border-top: 1px solid grey;
+    padding-top: 1%;
+}
+
+#rightButtons{
+    float:right;
+}

@@ -1,0 +1,52 @@
+<div id="employeeSearch">
+  <div class="btn-group" id="alphabet">
+    <button class="btn btn-info contact" (click)="search('')">
+      <i class="fa fa-user"></i>
+    </button>
+    <ng-container *ngFor="let alpha of alphabet"
+      ><button class="btn btn-info contact" (click)="search(alpha)">
+        {{ alpha }}
+      </button></ng-container
+    >
+  </div>
+  <div class="container searchMenu">
+    <form>
+      <label for="search">Search &nbsp;</label>
+      <input
+        #searchvalue
+        type="text"
+        id="search"
+        name="search"
+        placeholder="Enter any Keyword"
+        (keyup)="search(searchvalue.value)"
+      />
+      <button id="clear">Clear</button>
+      <label for="filter_by">Filter by &nbsp;</label>
+      <select
+        #filtervalue
+        id="filter"
+        name="filter"
+        (change)="filter(filtervalue.value)"
+      >
+        <option value="prefferedName" selected>Preffered Name</option>
+        <option value="firstName">First Name</option>
+        <option value="lastName">Last Name</option>
+        <option value="email">Email</option>
+        <option value="jobTitle">Job Title</option>
+        <option value="officeName">Office</option>
+        <option value="department">Department</option>
+        <option value="phoneNumber">Phone Number</option>
+        <option value="skypeId">Skype ID</option>
+      </select>
+      <button id="addEmployee" type="button" (click)="addEmployee()">
+        Add Employee
+      </button>
+    </form>
+    <p>
+      <small
+        ><b>Note:</b>Please use the advanced filter options to refine your
+        results.</small
+      >
+    </p>
+  </div>
+</div>

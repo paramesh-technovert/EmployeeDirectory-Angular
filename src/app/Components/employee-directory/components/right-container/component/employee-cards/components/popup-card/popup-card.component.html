@@ -1,0 +1,50 @@
+<div class="container-fluid" id="overlay-empcard">
+  <div class="row" id="popupCard">
+    <div class="col-lg-6 popupImage">
+      <img src="{{ data.imageUrl }}" width="338px" height="339px" />
+    </div>
+    <div class="col-lg-6 popupText">
+      <h4>
+        {{ data.prefferedName }}
+        <div id="rightButtons">
+          <button type="button" (click)="editDetails(data.email)">
+            <i class="fa fa-solid fa-user-pen"></i></button
+          ><button type="button" (click)="hidecard()">&cross;</button>
+        </div>
+      </h4>
+      <div>
+        <h6>Primary Details</h6>
+        <p>
+          <small>First Name:{{ data.firstName }}</small>
+        </p>
+        <p>
+          <small>Last Name:{{ data.lastName }}</small>
+        </p>
+      </div>
+      <div>
+        <h6>Job Details</h6>
+        <p>
+          <small>Job Title:{{ data.jobTitle }}</small>
+        </p>
+        <p>
+          <small>Department:{{ data.department }}</small>
+        </p>
+        <p>
+          <small>Office:{{ data.officeName }}</small>
+        </p>
+      </div>
+      <div>
+        <h6>Contact Details</h6>
+        <p>
+          <small>Email:{{ data.email }}</small>
+        </p>
+        <p>
+          <small>Phone Number:{{ data.phoneNumber }}</small>
+        </p>
+        <p>
+          <small>Skype Id:{{ data.skypeId }}</small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

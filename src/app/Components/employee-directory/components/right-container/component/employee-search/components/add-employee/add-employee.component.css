@@ -1,0 +1,52 @@
+#rightButtons{
+    float:right;
+}
+
+.formPopup {
+    position: fixed;
+    left: 45%;
+    top: 0%;
+    transform: translate(-50%, 5%);
+    z-index: 9;
+    border: 2px solid grey;
+    height:100%;
+    overflow: auto;
+  }
+
+  .formContainer {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  .formContainer input[type=text],select {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 20px 0;
+    border: none;
+    background: #eee;
+  }
+  .formContainer option{
+    padding:2%;
+  }
+
+  .formContainer .btn {
+    padding: 12px 20px;
+    border: none;
+    background-color: #8ebf42;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 15px;
+    opacity: 0.8;
+  }
+
+  img{
+    width: 100px;
+    height:100px;
+    border:2px solid grey;
+    margin-bottom: 1%;
+  }
+  .remove{
+    border:1px solid black;
+    padding-left:1%;
+  }

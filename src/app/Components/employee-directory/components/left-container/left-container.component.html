@@ -1,0 +1,32 @@
+<div id="leftContainer">
+  <p><b>Departments</b></p>
+  <div *ngFor="let department of departmentList | keyvalue">
+    <p
+      *ngIf="department.value > 0"
+      (click)="search('department', department.key)"
+    >
+      {{ department.key }}({{ department.value }})
+    </p>
+  </div>
+  <p><b>Offices</b></p>
+  <div *ngFor="let office of officeList | keyvalue">
+    <p *ngIf="office.value > 0" (click)="search('officeName', office.key)">
+      {{ office.key }}({{ office.value }})
+    </p>
+  </div>
+  <p><b>Job Title</b></p>
+  <div *ngFor="let jobrole of jobroleList | keyvalue | slice : 0 : 4">
+    <p (click)="search('jobTitle', jobrole.key)">
+      {{ jobrole.key }}({{ jobrole.value }})
+    </p>
+  </div>
+  <div *ngIf="!viewmore"><p (click)="viewmore = true">View More</p></div>
+  <div *ngIf="viewmore">
+    <div *ngFor="let jobrole of jobroleList | keyvalue | slice : 4">
+      <p (click)="search('jobTitle', jobrole.key)">
+        {{ jobrole.key }}({{ jobrole.value }})
+      </p>
+    </div>
+    <p (click)="viewmore = false">View Less</p>
+  </div>
+</div>
