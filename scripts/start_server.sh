@@ -6,7 +6,7 @@ sudo systemctl enable nginx
 
 # Clear existing files and copy Angular build files to Nginx folder
 sudo rm -rf /var/www/html/*
-sudo cp -r /home/ec2-user/EmployeeDirectory-Angular/dist/EmployeeDirectory-Angular/* /var/www/html/
+sudo cp -r /home/ec2-user/employee_directory/dist/employee_directory/* /var/www/html/
 
 # Restart Nginx to serve the app
 sudo systemctl restart nginx
