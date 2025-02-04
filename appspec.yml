@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /dist/EmployeeDirectory-Angular/
+  - source: /dist/employee_directory/
     destination: /var/www/html/  # Path where the Angular app should be served
 hooks:
   ApplicationStart:
