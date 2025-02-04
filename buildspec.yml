@@ -3,16 +3,15 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 16.10.0 # Specify the Node.js version (use your preferred version here)
+      nodejs: 16.10.0  # Correctly specify the Node.js version
     commands:
-      - echo Installing dependencies...
-      - npm install  # Install Angular CLI and project dependencies
+      - echo "Installing dependencies"
+      - npm install
   build:
     commands:
-      - npm run build --prod  # Build the Angular project for production
-  post_build:
-    commands:
-      - ls -la dist/  # List files in the dist directory to verify build output
+      - echo "Building Angular project"
+      - ng build --prod
 artifacts:
   files:
-    - dist/**/*  # Upload the contents of the dist folder as the build artifacts
+    - '**/*'
+  base-directory: 'dist/employee_directory'  # Replace with your output folder name
